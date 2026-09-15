@@ -1,29 +1,105 @@
-<h1>Producten</h1> <a href="{{ route('products.create') }}"> Product toevoegen </a> <hr>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@foreach ($products as $product)
+    <title>Producten</title>
 
-<h2>{{ $product->name }}</h2>
+    @vite(['resources/css/app.css'])
+</head>
 
-<p>Prijs: € {{ $product->price }}</p>
+<body>
 
-<p>{{ $product->description }}</p>
+    <header class="hero">
+        <img
+            src="{{ asset('img/test/logowebshop.png') }}"
+            alt="Logo"
+            class="logo"
+        >
 
-<a href="{{ route('products.show', $product) }}">
-    Bekijken
-</a>
+        <!-- <img
+            src="{{ asset('img/poot2.png') }}"
+            alt="Geit"
+            class="goat goat-right"
+        > -->
 
-<a href="{{ route('products.edit', $product) }}">
-    Bewerken
-</a>
+        <img
+            src="{{ asset('img/test/test4.png') }}"
+            alt="Geit"
+            class="goat goat-main"
+        >
 
-<form action="{{ route('products.destroy', $product) }}" method="POST">
-    @csrf
-    @method('DELETE')
+        <img
+            src="{{ asset('img/test/test3.png') }}"
+            alt="Geit"
+            class="goat goat-left"
+        >
 
-    <button type="submit">Verwijderen</button>
-</form>
+        <img
+            src="{{ asset('img/test/test22.png') }}"
+            alt="Geit"
+            class="goat goat-center"
+        >
 
-<hr>
+        <img src="{{ asset('img/test/graan/graan.png') }}" class="grain g1" alt="">
+        <img src="{{ asset('img/test/graan/graanFlipped.png') }}" class="grain g2" alt="">
+        <img src="{{ asset('img/test/graan/graan.png') }}" class="grain g3" alt="">
+        <img src="{{ asset('img/test/graan/graanFlipped.png') }}" class="grain g4" alt="">
+        <img src="{{ asset('img/test/graan/graan.png') }}" class="grain g5" alt="">
+        <img src="{{ asset('img/test/graan/graanFlipped.png') }}" class="grain g6" alt="">
+        <img src="{{ asset('img/test/graan/graan.png') }}" class="grain g7" alt="">
+        <img src="{{ asset('img/test/graan/graanFlipped.png') }}" class="grain g10" alt="">
+        <img src="{{ asset('img/test/graan/graan.png') }}" class="grain g13" alt="">
+        <img src="{{ asset('img/test/graan/graanFlipped.png') }}" class="grain g14" alt="">
+        <img src="{{ asset('img/test/graan/graan.png') }}" class="grain g15" alt="">
+    </header>
 
+    <main class="products">
+        <h1>Producten</h1>
 
-@endforeach
+        <a href="{{ route('products.create') }}">
+            Product toevoegen
+        </a>
+
+        <hr>
+
+        @foreach ($products as $product)
+            <article class="product">
+                <h2>{{ $product->name }}</h2>
+
+                <p>
+                    Prijs: € {{ $product->price }}
+                </p>
+
+                <p>
+                    {{ $product->description }}
+                </p>
+
+                <a href="{{ route('products.show', $product) }}">
+                    Bekijken
+                </a>
+
+                <a href="{{ route('products.edit', $product) }}">
+                    Bewerken
+                </a>
+
+                <form
+                    action="{{ route('products.destroy', $product) }}"
+                    method="POST"
+                >
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit">
+                        Verwijderen
+                    </button>
+                </form>
+            </article>
+
+            <hr>
+        @endforeach
+    </main>
+
+</body>
+</html>

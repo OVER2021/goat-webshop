@@ -7,3 +7,463 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('/img/grainfieldbackground.webp');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    position: absolute;
+    width: 550px;
+    height: auto;
+    top: 20px;
+    left: 460px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.goat {
+    position: absolute;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+}
+
+.goat-main {
+    width: 950px;
+    right: -55px;
+    top: 45%;
+    z-index: 2;
+    animation: mainFloat 4s ease-in-out infinite;
+}
+
+@keyframes mainFloat {
+    0% {
+        transform: translateY(-50%) rotate(10deg) scaleX(-1);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 12px)) rotate(12deg) scaleX(-1);
+    }
+
+    100% {
+        transform: translateY(-50%) rotate(10deg) scaleX(-1);
+    }
+}
+
+.goat-center {
+    width: 650px;
+    left: 90%;
+    top: 86.5%;
+    z-index: 3;
+    animation: centerFloat 4s ease-in-out infinite;
+}
+
+@keyframes centerFloat {
+    0% {
+        transform: translate(-50%, -50%) scaleX(-1) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, calc(-50% - 22px)) scaleX(-1) rotate(2deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scaleX(-1) rotate(0deg);
+    }
+}
+
+.goat-left {
+    width: 620px;
+    left: 88%;
+    top: 62.5%;
+    z-index: 4;
+    animation: leftFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes leftFloat {
+    0% {
+        transform: translate(-50%, -50%) scaleX(-1) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, calc(-50% - 16px)) scaleX(-1) rotate(-2deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scaleX(-1) rotate(0deg);
+    }
+}
+
+.goat-right {
+    width: 450px;
+    left: 65%;
+    top: 60%;
+    z-index: 0;
+    animation: rightFloat 4.8s ease-in-out infinite;
+}
+
+@keyframes rightFloat {
+    0% {
+        transform: translate(-50%, -50%) scaleX(-1) rotate(8deg);
+    }
+
+    50% {
+        transform: translate(-50%, calc(-50% + 18px)) scaleX(-1) rotate(5deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scaleX(-1) rotate(8deg);
+    }
+}
+
+.grain {
+    position: absolute;
+    bottom: -30px;
+    height: auto;
+    z-index: 5;
+    user-select: none;
+    pointer-events: none;
+    transform-origin: bottom center;
+    animation-name: grainGrow, grainWind;
+    animation-duration: 4s, 5s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-fill-mode: forwards, none;
+    animation-iteration-count: 1, infinite;
+}
+
+.g1 {
+    left: 0%;
+    width: 150px;
+    animation-delay: 0s, 4s;
+}
+
+.g2 {
+    left: 7%;
+    width: 180px;
+    animation-name: grainGrow, grainWindLeft;
+    animation-delay: 0s, 4.4s;
+    animation-duration: 4s, 6s;
+}
+
+.g3 {
+    left: 14%;
+    width: 130px;
+    animation-name: grainGrow, grainWindRight;
+    animation-delay: 0s, 4.8s;
+    animation-duration: 4s, 5.2s;
+}
+
+.g4 {
+    left: 21%;
+    width: 190px;
+    animation-name: grainGrow, grainWindSoft;
+    animation-delay: 0s, 4.2s;
+    animation-duration: 4s, 6.5s;
+}
+
+.g5 {
+    left: 29%;
+    width: 150px;
+    animation-delay: 0s, 5s;
+    animation-duration: 4s, 5.7s;
+}
+
+.g6 {
+    left: 37%;
+    width: 180px;
+    animation-name: grainGrow, grainWindLeft;
+    animation-delay: 0s, 4.6s;
+    animation-duration: 4s, 4.8s;
+}
+
+.g7 {
+    left: 45%;
+    width: 160px;
+    animation-name: grainGrow, grainWindRight;
+    animation-delay: 0s, 5.2s;
+    animation-duration: 4s, 6.2s;
+}
+
+.g10 {
+    left: 63%;
+    width: 90px;
+    animation-name: grainGrow, grainWindLeft;
+    animation-delay: 0s, 4.5s;
+    animation-duration: 4s, 5s;
+}
+
+.g13 {
+    left: 90%;
+    width: 140px;
+    animation-delay: 0s, 5.3s;
+    animation-duration: 4s, 6.1s;
+}
+
+.g14 {
+    left: 94%;
+    width: 180px;
+    animation-name: grainGrow, grainWindLeft;
+    animation-delay: 0s, 4.1s;
+    animation-duration: 4s, 5.3s;
+}
+
+.g15 {
+    left: 98%;
+    width: 220px;
+    animation-name: grainGrow, grainWindRight;
+    animation-delay: 0s, 4.8s;
+    animation-duration: 4s, 6.8s;
+}
+
+@keyframes grainGrow {
+    0% {
+        transform: translateY(250px) rotate(0deg);
+    }
+
+    70% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    85% {
+        transform: translateY(0) rotate(0.5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes grainWind {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(2deg);
+    }
+
+    40% {
+        transform: rotate(-3deg);
+    }
+
+    60% {
+        transform: rotate(1deg);
+    }
+
+    80% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes grainWindLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-3deg);
+    }
+
+    50% {
+        transform: rotate(1deg);
+    }
+
+    75% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes grainWindRight {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-1deg);
+    }
+
+    75% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes grainWindSoft {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(1.5deg);
+    }
+
+    55% {
+        transform: rotate(-1deg);
+    }
+
+    80% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 800px) {
+    .hero {
+        height: 600px;
+    }
+
+    .logo {
+        width: 320px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .goat-main {
+        width: 800px;
+        right: -80px;
+    }
+
+    .goat-center {
+        width: 530px;
+        left: 42%;
+        top: 38%;
+    }
+
+    .goat-left {
+        width: 190px;
+        left: 22%;
+        top: 48%;
+    }
+
+    .goat-right {
+        width: 450px;
+        left: 65%;
+        top: 45%;
+    }
+
+    .grain {
+        width: 130px;
+    }
+
+    .g1 {
+        left: -30px;
+    }
+
+    .g2 {
+        left: 5%;
+    }
+
+    .g3 {
+        left: 15%;
+    }
+
+    .g4 {
+        left: 25%;
+    }
+
+    .g5 {
+        left: 35%;
+    }
+
+    .g6 {
+        left: 45%;
+    }
+
+    .g7 {
+        left: 55%;
+    }
+
+    .g8 {
+        left: 65%;
+    }
+
+    .g9 {
+        left: 75%;
+    }
+
+    .g10 {
+        left: 85%;
+    }
+
+    .g11,
+    .g12,
+    .g13,
+    .g14,
+    .g15 {
+        display: none;
+    }
+}
+
+.products {
+    padding: 40px;
+    background: #f5f5f5;
+}
+
+.products h1 {
+    margin-bottom: 20px;
+}
+
+.products h2 {
+    margin-top: 30px;
+}
