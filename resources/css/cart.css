@@ -1,0 +1,584 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background: #ece8df;
+    perspective: 1400px;
+}
+
+.pagina {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.links {
+    width: 60%;
+    height: 100vh;
+    background: #ece8df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    flex-shrink: 0;
+}
+
+.rechts {
+    position: relative;
+    width: 40%;
+    height: 100vh;
+    overflow: hidden;
+    background: white;
+    perspective: 1100px;
+    transform-style: preserve-3d;
+    flex-shrink: 0;
+}
+
+.achtergrond {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.30)
+        ),
+        url("/imgform/grassbackground.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.geit {
+    position: absolute;
+    width: 84%;
+    max-width: 530px;
+    height: auto;
+    left: 50%;
+    bottom: 1%;
+    transform: translateX(-50%);
+    transform-origin: 50% 85%;
+    z-index: 2;
+    animation: geitBewegen 1.35s ease-in-out infinite;
+    filter: drop-shadow(0 9px 9px rgba(0, 0, 0, 0.16));
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.poot {
+    position: absolute;
+    width: 36%;
+    max-width: 220px;
+    height: auto;
+    z-index: 4;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    filter:
+        drop-shadow(5px 8px 5px rgba(0, 0, 0, 0.25))
+        drop-shadow(-2px -2px 2px rgba(255, 255, 255, 0.2));
+    will-change: transform;
+}
+
+.poot-links {
+    left: -3%;
+    top: 38%;
+    transform-origin: 88% 52%;
+    animation: roerenLinks 1.35s linear infinite;
+}
+
+.poot-rechts {
+    right: -3%;
+    top: 38%;
+    transform-origin: 12% 52%;
+    animation: roerenRechts 1.35s linear infinite;
+}
+
+.garde {
+    position: absolute;
+    width: 44%;
+    max-width: 270px;
+    height: auto;
+    left: 43%;
+    bottom: 12%;
+    z-index: 3;
+    transform-origin: 50% 78%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    animation: gardeRoeren 1.35s linear infinite;
+    filter:
+        drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.2))
+        drop-shadow(6px 8px 5px rgba(0, 0, 0, 0.12));
+    will-change: transform;
+}
+
+.beslagkom {
+    position: absolute;
+    width: 54%;
+    max-width: 390px;
+    height: auto;
+    left: 50%;
+    bottom: -2%;
+    transform: translateX(-50%);
+    transform-origin: 50% 90%;
+    z-index: 6;
+    animation: komWiebel 1.35s ease-in-out infinite;
+    filter: drop-shadow(0 9px 8px rgba(0, 0, 0, 0.2));
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.bonnetje {
+    width: 380px;
+    height: 670px;
+    max-height: 90vh;
+    background: #fffdf7;
+    padding: 38px 34px 30px;
+    font-family: "Courier New", Courier, monospace;
+    color: #181818;
+    box-shadow:
+        0 3px 5px rgba(0, 0, 0, 0.05),
+        0 14px 30px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.bon-klein {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.bonnetje h1 {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 19px;
+}
+
+.bon-lijn {
+    width: 100%;
+    border-top: 1px dashed #222;
+    margin: 14px 0;
+}
+
+.bon-info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 9px 18px;
+    font-size: 11px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.bon-info span:nth-child(even) {
+    text-align: right;
+    font-weight: bold;
+}
+
+.bon-product {
+    display: grid;
+    grid-template-columns: 30px 1fr auto;
+    gap: 9px;
+    font-size: 12px;
+    margin: 8px 0;
+}
+
+.bon-product span:last-child {
+    text-align: right;
+}
+
+.bonnetje form {
+    margin: 0 0 7px 39px;
+}
+
+.bonnetje button {
+    border: none;
+    background: none;
+    padding: 0;
+    color: #181818;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.bon-ruimte {
+    flex: 1;
+    min-height: 20px;
+}
+
+.bon-totaal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.bon-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+.bonnetje > a {
+    color: #181818;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@keyframes gardeRoeren {
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            perspective(700px)
+            translate3d(-20px, 0, -12px)
+            rotateZ(34deg)
+            rotateX(14deg)
+            rotateY(-15deg)
+            scaleX(-1)
+            scale(0.96);
+    }
+
+    12.5% {
+        transform:
+            translateX(-50%)
+            perspective(700px)
+            translate3d(-15px, 7px, -6px)
+            rotateZ(28deg)
+            rotateX(9deg)
+            rotateY(-10deg)
+            scaleX(-1)
+            scale(0.98);
+    }
+
+    25% {
+        transform:
+            translateX(-50%)
+            perspective(700px)
+            translate3d(0, 10px, 5px)
+            rotateZ(20deg)
+            rotateX(1deg)
+            rotateY(0deg)
+            scaleX(-1)
+            scale(1.02);
+    }
+
+    37.5% {
+        transform:
+            translateX(-50%)
+            perspective(700px)
+            translate3d(16px, 7px, 15px)
+            rotateZ(14deg)
+            rotateX(-8deg)
+            rotateY(12deg)
+            scaleX(-1)
+            scale(1.05);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            perspective(700px)
+            translate3d(20px, 0, 18px)
+            rotateZ(12deg)
+            rotateX(-13deg)
+            rotateY(17deg)
+            scaleX(-1)
+            scale(1.065);
+    }
+
+    62.5% {
+        transform:
+            translateX(-50%)
+            perspective(700px)
+            translate3d(15px, -6px, 13px)
+            rotateZ(16deg)
+            rotateX(-8deg)
+            rotateY(11deg)
+            scaleX(-1)
+            scale(1.045);
+    }
+
+    75% {
+        transform:
+            translateX(-50%)
+            perspective(700px)
+            translate3d(0, -9px, 3px)
+            rotateZ(22deg)
+            rotateX(0deg)
+            rotateY(1deg)
+            scaleX(-1)
+            scale(1.01);
+    }
+
+    87.5% {
+        transform:
+            translateX(-50%)
+            perspective(700px)
+            translate3d(-15px, -6px, -8px)
+            rotateZ(30deg)
+            rotateX(9deg)
+            rotateY(-10deg)
+            scaleX(-1)
+            scale(0.975);
+    }
+}
+
+@keyframes roerenLinks {
+    0%,
+    100% {
+        transform:
+            perspective(800px)
+            translate3d(-8px, -7px, -10px)
+            rotateZ(250deg)
+            rotateX(-14deg)
+            rotateY(15deg)
+            scale(0.96);
+    }
+
+    25% {
+        transform:
+            perspective(800px)
+            translate3d(3px, 3px, 5px)
+            rotateZ(264deg)
+            rotateX(-2deg)
+            rotateY(2deg)
+            scale(1.01);
+    }
+
+    50% {
+        transform:
+            perspective(800px)
+            translate3d(11px, 12px, 20px)
+            rotateZ(281deg)
+            rotateX(13deg)
+            rotateY(-14deg)
+            scale(1.05);
+    }
+
+    75% {
+        transform:
+            perspective(800px)
+            translate3d(2px, 3px, 5px)
+            rotateZ(266deg)
+            rotateX(0deg)
+            rotateY(1deg)
+            scale(1.01);
+    }
+}
+
+@keyframes roerenRechts {
+    0%,
+    100% {
+        transform:
+            perspective(800px)
+            translate3d(9px, 10px, 18px)
+            rotateZ(-282deg)
+            rotateX(-13deg)
+            rotateY(14deg)
+            scale(1.05);
+    }
+
+    25% {
+        transform:
+            perspective(800px)
+            translate3d(1px, 2px, 5px)
+            rotateZ(-268deg)
+            rotateX(0deg)
+            rotateY(1deg)
+            scale(1.01);
+    }
+
+    50% {
+        transform:
+            perspective(800px)
+            translate3d(-9px, -7px, -10px)
+            rotateZ(-251deg)
+            rotateX(14deg)
+            rotateY(-15deg)
+            scale(0.96);
+    }
+
+    75% {
+        transform:
+            perspective(800px)
+            translate3d(0, 2px, 5px)
+            rotateZ(-267deg)
+            rotateX(0deg)
+            rotateY(1deg)
+            scale(1.01);
+    }
+}
+
+@keyframes geitBewegen {
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            translateY(0)
+            rotateZ(-0.4deg);
+    }
+
+    25% {
+        transform:
+            translateX(-50%)
+            translateY(-2px)
+            rotateZ(0deg);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translateY(-4px)
+            rotateZ(0.5deg);
+    }
+
+    75% {
+        transform:
+            translateX(-50%)
+            translateY(-2px)
+            rotateZ(0deg);
+    }
+}
+
+@keyframes komWiebel {
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            translate3d(-1px, 0, 0)
+            rotateZ(-0.35deg);
+    }
+
+    25% {
+        transform:
+            translateX(-50%)
+            translate3d(0, 1px, 1px)
+            rotateZ(0.15deg);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translate3d(1px, 0, 2px)
+            rotateZ(0.4deg);
+    }
+
+    75% {
+        transform:
+            translateX(-50%)
+            translate3d(0, 1px, 1px)
+            rotateZ(0.1deg);
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .pagina {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .links {
+        width: 100%;
+        height: 720px;
+    }
+
+    .rechts {
+        width: 100%;
+        height: 550px;
+    }
+
+    .bonnetje {
+        width: 380px;
+        max-width: 95%;
+        height: 670px;
+    }
+
+    .geit {
+        width: 58%;
+        max-width: 450px;
+    }
+
+    .poot {
+        width: 26%;
+        max-width: 185px;
+    }
+
+    .poot-links {
+        left: 9%;
+    }
+
+    .poot-rechts {
+        right: 9%;
+    }
+
+    .garde {
+        width: 33%;
+        max-width: 220px;
+    }
+
+    .beslagkom {
+        width: 45%;
+        max-width: 320px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .geit,
+    .poot-links,
+    .poot-rechts,
+    .garde,
+    .beslagkom {
+        animation: none;
+    }
+
+    .geit {
+        transform: translateX(-50%);
+    }
+
+    .poot-links {
+        transform: rotate(270deg);
+    }
+
+    .poot-rechts {
+        transform: rotate(-270deg);
+    }
+
+    .garde {
+        transform:
+            translateX(-50%)
+            rotate(22deg)
+            scaleX(-1);
+    }
+
+    .beslagkom {
+        transform: translateX(-50%);
+    }
+}
