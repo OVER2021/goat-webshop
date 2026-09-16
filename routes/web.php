@@ -1,12 +1,21 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
+Route::redirect('/', '/products');
+
 Route::resource('products', ProductController::class);
 
-Route::redirect('/', '/products');// <--- voor automatisch brengen naar ...(home)pagina
+Route::middleware('auth')->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+    Route::post('/cart/add/{product}', [CartController::class, 'add'])
+        ->name('cart.add');
+
+    Route::delete('/cart/remove/{product}', [CartController::class, 'remove'])
+        ->name('cart.remove');
+});
+
+require __DIR__.'/auth.php';
