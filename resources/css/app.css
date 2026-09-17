@@ -1,9 +1,3 @@
-@import "./cart.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
