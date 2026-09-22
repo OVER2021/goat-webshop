@@ -3,11 +3,11 @@
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('products', ProductController::class);
-
 Route::redirect('/', '/products');
 
-Route::get('/winkelwagen', function () {
+Route::resource('products', ProductController::class);
+
+Route::get('/cart', function () {
     $cart = session()->get('cart', []);
 
     $totaal = collect($cart)->sum(function ($item) {
