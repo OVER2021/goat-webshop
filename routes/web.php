@@ -5,8 +5,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('products', ProductController::class);
 
-Route::redirect('/', '/products');// <--- voor automatisch brengen naar ...(home)pagina
+Route::redirect('/', '/products');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/winkelwagen', function () {
+    $cart = session()->get('cart', []);
+
+    $totaal = collect($cart)->sum(function ($item) {
+        return $item['price'] * $item['quantity'];
+    });
+
+    return view('cart.index', compact('cart', 'totaal'));
+})->name('cart.index');

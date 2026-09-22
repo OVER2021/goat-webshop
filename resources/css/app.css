@@ -20,18 +20,6 @@ body {
     min-height: 100%;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html,
-body {
-    width: 100%;
-    min-height: 100%;
-}
-
 body {
     font-family: Arial, sans-serif;
     background: #f5f5f5;
@@ -43,11 +31,9 @@ body {
     width: 100%;
     height: 600px;
     overflow: hidden;
-
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
         url('/img/grainfieldbackground.webp');
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -61,6 +47,7 @@ body {
     left: 460px;
     user-select: none;
     pointer-events: none;
+    z-index: 10;
 }
 
 .goat {
@@ -141,7 +128,7 @@ body {
     width: 450px;
     left: 65%;
     top: 60%;
-    z-index: 0;
+    z-index: 1;
     animation: rightFloat 4.8s ease-in-out infinite;
 }
 
@@ -161,118 +148,198 @@ body {
 
 .grain {
     position: absolute;
-    bottom: -30px;
+    bottom: -5px;
     height: auto;
     z-index: 5;
     user-select: none;
     pointer-events: none;
     transform-origin: bottom center;
-    animation-name: grainGrow, grainWind;
-    animation-duration: 4s, 5s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-fill-mode: forwards, none;
-    animation-iteration-count: 1, infinite;
+    animation:
+        grainUp 3s ease-out forwards,
+        grainWind 5s ease-in-out 3s infinite;
 }
 
 .g1 {
-    left: 0%;
-    width: 150px;
-    animation-delay: 0s, 4s;
+    left: -2%;
+    width: 145px;
 }
 
 .g2 {
-    left: 7%;
-    width: 180px;
-    animation-name: grainGrow, grainWindLeft;
-    animation-delay: 0s, 4.4s;
-    animation-duration: 4s, 6s;
+    left: 2%;
+    width: 175px;
+    animation-name: grainUp, grainWindLeft;
 }
 
 .g3 {
-    left: 14%;
-    width: 130px;
-    animation-name: grainGrow, grainWindRight;
-    animation-delay: 0s, 4.8s;
-    animation-duration: 4s, 5.2s;
+    left: 6%;
+    width: 125px;
+    animation-name: grainUp, grainWindRight;
 }
 
 .g4 {
-    left: 21%;
-    width: 190px;
-    animation-name: grainGrow, grainWindSoft;
-    animation-delay: 0s, 4.2s;
-    animation-duration: 4s, 6.5s;
+    left: 10%;
+    width: 165px;
+    animation-name: grainUp, grainWindSoft;
 }
 
 .g5 {
-    left: 29%;
-    width: 150px;
-    animation-delay: 0s, 5s;
-    animation-duration: 4s, 5.7s;
+    left: 14%;
+    width: 135px;
 }
 
 .g6 {
-    left: 37%;
-    width: 180px;
-    animation-name: grainGrow, grainWindLeft;
-    animation-delay: 0s, 4.6s;
-    animation-duration: 4s, 4.8s;
+    left: 18%;
+    width: 185px;
+    animation-name: grainUp, grainWindLeft;
 }
 
 .g7 {
-    left: 45%;
-    width: 160px;
-    animation-name: grainGrow, grainWindRight;
-    animation-delay: 0s, 5.2s;
-    animation-duration: 4s, 6.2s;
+    left: 22%;
+    width: 145px;
+    animation-name: grainUp, grainWindRight;
+}
+
+.g8 {
+    left: 26%;
+    width: 170px;
+    animation-name: grainUp, grainWindSoft;
+}
+
+.g9 {
+    left: 30%;
+    width: 125px;
+    animation-name: grainUp, grainWindLeft;
 }
 
 .g10 {
-    left: 63%;
-    width: 90px;
-    animation-name: grainGrow, grainWindLeft;
-    animation-delay: 0s, 4.5s;
-    animation-duration: 4s, 5s;
+    left: 34%;
+    width: 180px;
+    animation-name: grainUp, grainWindRight;
+}
+
+.g11 {
+    left: 38%;
+    width: 140px;
+}
+
+.g12 {
+    left: 42%;
+    width: 165px;
+    animation-name: grainUp, grainWindLeft;
 }
 
 .g13 {
-    left: 90%;
-    width: 140px;
-    animation-delay: 0s, 5.3s;
-    animation-duration: 4s, 6.1s;
+    left: 46%;
+    width: 130px;
+    animation-name: grainUp, grainWindRight;
 }
 
 .g14 {
-    left: 94%;
-    width: 180px;
-    animation-name: grainGrow, grainWindLeft;
-    animation-delay: 0s, 4.1s;
-    animation-duration: 4s, 5.3s;
+    left: 50%;
+    width: 185px;
+    animation-name: grainUp, grainWindSoft;
 }
 
 .g15 {
-    left: 98%;
-    width: 220px;
-    animation-name: grainGrow, grainWindRight;
-    animation-delay: 0s, 4.8s;
-    animation-duration: 4s, 6.8s;
+    left: 54%;
+    width: 140px;
 }
 
-@keyframes grainGrow {
+.g16 {
+    left: 58%;
+    width: 175px;
+    animation-name: grainUp, grainWindLeft;
+}
+
+.g17 {
+    left: 62%;
+    width: 125px;
+    animation-name: grainUp, grainWindRight;
+}
+
+.g18 {
+    left: 16%;
+    width: 165px;
+    animation-name: grainUp, grainWindSoft;
+}
+
+.g19 {
+    left: 10%;
+    width: 145px;
+}
+
+.g20 {
+    left: 14%;
+    width: 180px;
+    animation-name: grainUp, grainWindLeft;
+}
+
+.g21 {
+    left: 78%;
+    width: 135px;
+    animation-name: grainUp, grainWindRight;
+}
+
+.g22 {
+    left: 82%;
+    width: 175px;
+    animation-name: grainUp, grainWindSoft;
+}
+
+.g23 {
+    left: 86%;
+    width: 130px;
+}
+
+.g24 {
+    left: 89%;
+    width: 165px;
+    animation-name: grainUp, grainWindLeft;
+}
+
+.g25 {
+    left: 92%;
+    width: 140px;
+    animation-name: grainUp, grainWindRight;
+}
+
+.g26 {
+    left: 115%;
+    width: 190px;
+    animation-name: grainUp, grainWindSoft;
+}
+
+.g27 {
+    left: 8%;
+    width: 110px;
+    animation-name: grainUp, grainWindLeft;
+}
+
+.g28 {
+    left: 16%;
+    width: 115px;
+    animation-name: grainUp, grainWindRight;
+}
+
+.g29 {
+    left: 90%;
+    width: 105px;
+    animation-name: grainUp, grainWindSoft;
+}
+
+.g30 {
+    left: 37%;
+    width: 120px;
+    animation-name: grainUp, grainWindLeft;
+}
+
+@keyframes grainUp {
     0% {
-        transform: translateY(250px) rotate(0deg);
-    }
-
-    70% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    85% {
-        transform: translateY(0) rotate(0.5deg);
+        transform: translateY(100%);
     }
 
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0);
     }
 }
 
@@ -368,6 +435,19 @@ body {
     }
 }
 
+.products {
+    padding: 40px;
+    background: #f5f5f5;
+}
+
+.products h1 {
+    margin-bottom: 20px;
+}
+
+.products h2 {
+    margin-top: 30px;
+}
+
 @media (max-width: 800px) {
     .hero {
         height: 600px;
@@ -403,67 +483,143 @@ body {
     }
 
     .grain {
-        width: 130px;
+        bottom: -5px;
     }
 
     .g1 {
-        left: -30px;
+        left: -25px;
+        width: 120px;
     }
 
     .g2 {
-        left: 5%;
+        left: 2%;
+        width: 135px;
     }
 
     .g3 {
-        left: 15%;
+        left: 6%;
+        width: 110px;
     }
 
     .g4 {
-        left: 25%;
+        left: 10%;
+        width: 140px;
     }
 
     .g5 {
-        left: 35%;
+        left: 14%;
+        width: 115px;
     }
 
     .g6 {
-        left: 45%;
+        left: 18%;
+        width: 145px;
     }
 
     .g7 {
-        left: 55%;
+        left: 22%;
+        width: 120px;
     }
 
     .g8 {
-        left: 65%;
+        left: 26%;
+        width: 135px;
     }
 
     .g9 {
-        left: 75%;
+        left: 30%;
+        width: 110px;
     }
 
     .g10 {
-        left: 85%;
+        left: 34%;
+        width: 140px;
     }
 
-    .g11,
-    .g12,
-    .g13,
-    .g14,
+    .g11 {
+        left: 38%;
+        width: 115px;
+    }
+
+    .g12 {
+        left: 42%;
+        width: 135px;
+    }
+
+    .g13 {
+        left: 46%;
+        width: 110px;
+    }
+
+    .g14 {
+        left: 50%;
+        width: 145px;
+    }
+
     .g15 {
+        left: 54%;
+        width: 115px;
+    }
+
+    .g16 {
+        left: 58%;
+        width: 135px;
+    }
+
+    .g17 {
+        left: 62%;
+        width: 110px;
+    }
+
+    .g18 {
+        left: 66%;
+        width: 140px;
+    }
+
+    .g19 {
+        left: 70%;
+        width: 115px;
+    }
+
+    .g20 {
+        left: 74%;
+        width: 145px;
+    }
+
+    .g21 {
+        left: 78%;
+        width: 110px;
+    }
+
+    .g22 {
+        left: 82%;
+        width: 135px;
+    }
+
+    .g23 {
+        left: 86%;
+        width: 110px;
+    }
+
+    .g24 {
+        left: 89%;
+        width: 140px;
+    }
+
+    .g25 {
+        left: 92%;
+        width: 115px;
+    }
+
+    .g26 {
+        left: 95%;
+        width: 145px;
+    }
+
+    .g27,
+    .g28,
+    .g29,
+    .g30 {
         display: none;
     }
-}
-
-.products {
-    padding: 40px;
-    background: #f5f5f5;
-}
-
-.products h1 {
-    margin-bottom: 20px;
-}
-
-.products h2 {
-    margin-top: 30px;
 }
