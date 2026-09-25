@@ -7,6 +7,11 @@
     @vite(['resources/css/app.css'])
 </head>
 <body>
+@if (session('status'))
+    <div class="login-success">
+        {{ session('status') }}
+    </div>
+@endif
 
 @auth
     <form method="POST" action="{{ route('logout') }}">

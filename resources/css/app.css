@@ -356,3 +356,110 @@ body {
     font-size: 15px;
     border-radius: 3px;
 }
+
+.product-form-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 50px 20px 50px 80px;
+}
+
+.product-form-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: #ffff;
+    padding: 40px 40px 35px;
+}
+
+.product-form-card::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    pointer-events: none;
+}
+
+.product-form-title {
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #1c1c1c;
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+.product-form-card form > div {
+    margin-bottom: 20px;
+}
+
+.product-form-card label {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1c1c1c;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.product-form-card input[type="text"],
+.product-form-card input[type="number"],
+.product-form-card textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #1c1c1c;
+    border: none;
+    border-bottom: 3px solid #d8c8a8;
+    border-radius: 0;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.product-form-card textarea {
+    resize: vertical;
+    min-height: 90px;
+    font-family: Arial, sans-serif;
+}
+
+.product-form-errors {
+    background: #f7e3d3;
+    border-left: 4px solid #9e533a;
+    color: #6b3010;
+    padding: 12px 16px;
+    margin-bottom: 22px;
+    font-size: 14px;
+    list-style: none;
+}
+
+.product-form-errors li {
+    margin: 2px 0;
+}
+
+.product-form-card button[type="submit"] {
+    background: #1c1c1c;
+    color: #fdf6ec;
+    font-weight: 100;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 13px 32px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.product-form-cancel {
+    display: inline-block;
+    margin-left: 16px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #6b5a45;
+    text-decoration: none;
+}
