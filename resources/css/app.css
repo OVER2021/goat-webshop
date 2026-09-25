@@ -1,12 +1,6 @@
-@import 'tailwindcss';
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
     margin: 0;
@@ -67,17 +61,9 @@ body {
 }
 
 @keyframes mainFloat {
-    0% {
-        transform: translateY(-50%) rotate(10deg) scaleX(-1);
-    }
-
-    50% {
-        transform: translateY(calc(-50% - 12px)) rotate(12deg) scaleX(-1);
-    }
-
-    100% {
-        transform: translateY(-50%) rotate(10deg) scaleX(-1);
-    }
+    0% { transform: translateY(-50%) rotate(10deg) scaleX(-1); }
+    50% { transform: translateY(calc(-50% - 12px)) rotate(12deg) scaleX(-1); }
+    100% { transform: translateY(-50%) rotate(10deg) scaleX(-1); }
 }
 
 .goat-center {
@@ -89,17 +75,9 @@ body {
 }
 
 @keyframes centerFloat {
-    0% {
-        transform: translate(-50%, -50%) scaleX(-1) rotate(0deg);
-    }
-
-    50% {
-        transform: translate(-50%, calc(-50% - 22px)) scaleX(-1) rotate(2deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scaleX(-1) rotate(0deg);
-    }
+    0% { transform: translate(-50%, -50%) scaleX(-1) rotate(0deg); }
+    50% { transform: translate(-50%, calc(-50% - 22px)) scaleX(-1) rotate(2deg); }
+    100% { transform: translate(-50%, -50%) scaleX(-1) rotate(0deg); }
 }
 
 .goat-left {
@@ -111,17 +89,9 @@ body {
 }
 
 @keyframes leftFloat {
-    0% {
-        transform: translate(-50%, -50%) scaleX(-1) rotate(0deg);
-    }
-
-    50% {
-        transform: translate(-50%, calc(-50% - 16px)) scaleX(-1) rotate(-2deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scaleX(-1) rotate(0deg);
-    }
+    0% { transform: translate(-50%, -50%) scaleX(-1) rotate(0deg); }
+    50% { transform: translate(-50%, calc(-50% - 16px)) scaleX(-1) rotate(-2deg); }
+    100% { transform: translate(-50%, -50%) scaleX(-1) rotate(0deg); }
 }
 
 .goat-right {
@@ -133,17 +103,9 @@ body {
 }
 
 @keyframes rightFloat {
-    0% {
-        transform: translate(-50%, -50%) scaleX(-1) rotate(8deg);
-    }
-
-    50% {
-        transform: translate(-50%, calc(-50% + 18px)) scaleX(-1) rotate(5deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scaleX(-1) rotate(8deg);
-    }
+    0% { transform: translate(-50%, -50%) scaleX(-1) rotate(8deg); }
+    50% { transform: translate(-50%, calc(-50% + 18px)) scaleX(-1) rotate(5deg); }
+    100% { transform: translate(-50%, -50%) scaleX(-1) rotate(8deg); }
 }
 
 .grain {
@@ -159,280 +121,73 @@ body {
         grainWind 5s ease-in-out 3s infinite;
 }
 
-.g1 {
-    left: -2%;
-    width: 145px;
-}
-
-.g2 {
-    left: 2%;
-    width: 175px;
-    animation-name: grainUp, grainWindLeft;
-}
-
-.g3 {
-    left: 6%;
-    width: 125px;
-    animation-name: grainUp, grainWindRight;
-}
-
-.g4 {
-    left: 10%;
-    width: 165px;
-    animation-name: grainUp, grainWindSoft;
-}
-
-.g5 {
-    left: 14%;
-    width: 135px;
-}
-
-.g6 {
-    left: 18%;
-    width: 185px;
-    animation-name: grainUp, grainWindLeft;
-}
-
-.g7 {
-    left: 22%;
-    width: 145px;
-    animation-name: grainUp, grainWindRight;
-}
-
-.g8 {
-    left: 26%;
-    width: 170px;
-    animation-name: grainUp, grainWindSoft;
-}
-
-.g9 {
-    left: 30%;
-    width: 125px;
-    animation-name: grainUp, grainWindLeft;
-}
-
-.g10 {
-    left: 34%;
-    width: 180px;
-    animation-name: grainUp, grainWindRight;
-}
-
-.g11 {
-    left: 38%;
-    width: 140px;
-}
-
-.g12 {
-    left: 42%;
-    width: 165px;
-    animation-name: grainUp, grainWindLeft;
-}
-
-.g13 {
-    left: 46%;
-    width: 130px;
-    animation-name: grainUp, grainWindRight;
-}
-
-.g14 {
-    left: 50%;
-    width: 185px;
-    animation-name: grainUp, grainWindSoft;
-}
-
-.g15 {
-    left: 54%;
-    width: 140px;
-}
-
-.g16 {
-    left: 58%;
-    width: 175px;
-    animation-name: grainUp, grainWindLeft;
-}
-
-.g17 {
-    left: 62%;
-    width: 125px;
-    animation-name: grainUp, grainWindRight;
-}
-
-.g18 {
-    left: 16%;
-    width: 165px;
-    animation-name: grainUp, grainWindSoft;
-}
-
-.g19 {
-    left: 10%;
-    width: 145px;
-}
-
-.g20 {
-    left: 14%;
-    width: 180px;
-    animation-name: grainUp, grainWindLeft;
-}
-
-.g21 {
-    left: 78%;
-    width: 135px;
-    animation-name: grainUp, grainWindRight;
-}
-
-.g22 {
-    left: 82%;
-    width: 175px;
-    animation-name: grainUp, grainWindSoft;
-}
-
-.g23 {
-    left: 86%;
-    width: 130px;
-}
-
-.g24 {
-    left: 89%;
-    width: 165px;
-    animation-name: grainUp, grainWindLeft;
-}
-
-.g25 {
-    left: 92%;
-    width: 140px;
-    animation-name: grainUp, grainWindRight;
-}
-
-.g26 {
-    left: 115%;
-    width: 190px;
-    animation-name: grainUp, grainWindSoft;
-}
-
-.g27 {
-    left: 8%;
-    width: 110px;
-    animation-name: grainUp, grainWindLeft;
-}
-
-.g28 {
-    left: 16%;
-    width: 115px;
-    animation-name: grainUp, grainWindRight;
-}
-
-.g29 {
-    left: 90%;
-    width: 105px;
-    animation-name: grainUp, grainWindSoft;
-}
-
-.g30 {
-    left: 37%;
-    width: 120px;
-    animation-name: grainUp, grainWindLeft;
-}
+.g1 { left: -2%; width: 145px; }
+.g2 { left: 2%; width: 175px; animation-name: grainUp, grainWindLeft; }
+.g3 { left: 6%; width: 125px; animation-name: grainUp, grainWindRight; }
+.g4 { left: 10%; width: 165px; animation-name: grainUp, grainWindSoft; }
+.g5 { left: 14%; width: 135px; }
+.g6 { left: 18%; width: 185px; animation-name: grainUp, grainWindLeft; }
+.g7 { left: 22%; width: 145px; animation-name: grainUp, grainWindRight; }
+.g8 { left: 26%; width: 170px; animation-name: grainUp, grainWindSoft; }
+.g9 { left: 30%; width: 125px; animation-name: grainUp, grainWindLeft; }
+.g10 { left: 34%; width: 180px; animation-name: grainUp, grainWindRight; }
+.g11 { left: 38%; width: 140px; }
+.g12 { left: 42%; width: 165px; animation-name: grainUp, grainWindLeft; }
+.g13 { left: 46%; width: 130px; animation-name: grainUp, grainWindRight; }
+.g14 { left: 50%; width: 185px; animation-name: grainUp, grainWindSoft; }
+.g15 { left: 54%; width: 140px; }
+.g16 { left: 58%; width: 175px; animation-name: grainUp, grainWindLeft; }
+.g17 { left: 62%; width: 125px; animation-name: grainUp, grainWindRight; }
+.g18 { left: 16%; width: 165px; animation-name: grainUp, grainWindSoft; }
+.g19 { left: 10%; width: 145px; }
+.g20 { left: 14%; width: 180px; animation-name: grainUp, grainWindLeft; }
+.g21 { left: 78%; width: 135px; animation-name: grainUp, grainWindRight; }
+.g22 { left: 82%; width: 175px; animation-name: grainUp, grainWindSoft; }
+.g23 { left: 86%; width: 130px; }
+.g24 { left: 89%; width: 165px; animation-name: grainUp, grainWindLeft; }
+.g25 { left: 92%; width: 140px; animation-name: grainUp, grainWindRight; }
+.g26 { left: 115%; width: 190px; animation-name: grainUp, grainWindSoft; }
+.g27 { left: 8%; width: 110px; animation-name: grainUp, grainWindLeft; }
+.g28 { left: 16%; width: 115px; animation-name: grainUp, grainWindRight; }
+.g29 { left: 90%; width: 105px; animation-name: grainUp, grainWindSoft; }
+.g30 { left: 37%; width: 120px; animation-name: grainUp, grainWindLeft; }
 
 @keyframes grainUp {
-    0% {
-        transform: translateY(100%);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
 }
 
 @keyframes grainWind {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    20% {
-        transform: rotate(2deg);
-    }
-
-    40% {
-        transform: rotate(-3deg);
-    }
-
-    60% {
-        transform: rotate(1deg);
-    }
-
-    80% {
-        transform: rotate(-2deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(2deg); }
+    40% { transform: rotate(-3deg); }
+    60% { transform: rotate(1deg); }
+    80% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
 }
 
 @keyframes grainWindLeft {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(-3deg);
-    }
-
-    50% {
-        transform: rotate(1deg);
-    }
-
-    75% {
-        transform: rotate(-2deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    50% { transform: rotate(1deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
 }
 
 @keyframes grainWindRight {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(3deg);
-    }
-
-    50% {
-        transform: rotate(-1deg);
-    }
-
-    75% {
-        transform: rotate(2deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(-1deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
 }
 
 @keyframes grainWindSoft {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    30% {
-        transform: rotate(1.5deg);
-    }
-
-    55% {
-        transform: rotate(-1deg);
-    }
-
-    80% {
-        transform: rotate(1deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
+    0% { transform: rotate(0deg); }
+    30% { transform: rotate(1.5deg); }
+    55% { transform: rotate(-1deg); }
+    80% { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
 }
 
 .products {
@@ -449,177 +204,144 @@ body {
 }
 
 @media (max-width: 800px) {
-    .hero {
-        height: 600px;
-    }
+    .hero { height: 600px; }
+    .logo { width: 320px; top: 20px; left: 20px; }
+    .goat-main { width: 800px; right: -80px; }
+    .goat-center { width: 530px; left: 42%; top: 38%; }
+    .goat-left { width: 190px; left: 22%; top: 48%; }
+    .goat-right { width: 450px; left: 65%; top: 45%; }
+    .grain { bottom: -5px; }
+    .g1 { left: -25px; width: 120px; }
+    .g2 { left: 2%; width: 135px; }
+    .g3 { left: 6%; width: 110px; }
+    .g4 { left: 10%; width: 140px; }
+    .g5 { left: 14%; width: 115px; }
+    .g6 { left: 18%; width: 145px; }
+    .g7 { left: 22%; width: 120px; }
+    .g8 { left: 26%; width: 135px; }
+    .g9 { left: 30%; width: 110px; }
+    .g10 { left: 34%; width: 140px; }
+    .g11 { left: 38%; width: 115px; }
+    .g12 { left: 42%; width: 135px; }
+    .g13 { left: 46%; width: 110px; }
+    .g14 { left: 50%; width: 145px; }
+    .g15 { left: 54%; width: 115px; }
+    .g16 { left: 58%; width: 135px; }
+    .g17 { left: 62%; width: 110px; }
+    .g18 { left: 66%; width: 140px; }
+    .g19 { left: 70%; width: 115px; }
+    .g20 { left: 74%; width: 145px; }
+    .g21 { left: 78%; width: 110px; }
+    .g22 { left: 82%; width: 135px; }
+    .g23 { left: 86%; width: 110px; }
+    .g24 { left: 89%; width: 140px; }
+    .g25 { left: 92%; width: 115px; }
+    .g26 { left: 95%; width: 145px; }
+    .g27, .g28, .g29, .g30 { display: none; }
+}
 
-    .logo {
-        width: 320px;
-        top: 20px;
-        left: 20px;
-    }
+.goat-body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fdf6ec;
+    position: relative;
+}
 
-    .goat-main {
-        width: 800px;
-        right: -80px;
-    }
+.goat-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
 
-    .goat-center {
-        width: 530px;
-        left: 42%;
-        top: 38%;
-    }
+.goat-card {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    background: #fffdf9;
+    padding: 70px 45px 40px;
+    box-shadow: 0 25px 60px rgba(28, 20, 10, 0.15);
+    margin-top: 70px;
+}
 
-    .goat-left {
-        width: 190px;
-        left: 22%;
-        top: 48%;
-    }
+.goat-card::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    border: 3px solid #9e533a;
+    pointer-events: none;
+}
 
-    .goat-right {
-        width: 450px;
-        left: 65%;
-        top: 45%;
-    }
+.goat-emblem {
+    position: absolute;
+    top: -135px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+    z-index: 5;
+}
 
-    .grain {
-        bottom: -5px;
-    }
+:root {
+    --rushnyk-text: #1c1c1c;
+}
 
-    .g1 {
-        left: -25px;
-        width: 120px;
-    }
+.goat-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rushnyk-text) !important;
+    text-align: center;
+    margin: 0 0 28px;
+}
 
-    .g2 {
-        left: 2%;
-        width: 135px;
-    }
+.goat-card label {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--rushnyk-text) !important;
+    display: block;
+    margin-bottom: 8px;
+}
 
-    .g3 {
-        left: 6%;
-        width: 110px;
-    }
+.koe-emblem-cow {
+    width: 180px;
+    top: -125px;
+}
 
-    .g4 {
-        left: 10%;
-        width: 140px;
-    }
+.goat-card-login::before {
+    border: 8px solid transparent;
+    border-image: url('/img/koeprint.jpg') 10 round;
+}
 
-    .g5 {
-        left: 14%;
-        width: 115px;
-    }
+.goat-card-register::before {
+    border: 8px solid transparent;
+    border-image: url('/img/goatprint.jpg') 10 round;
+}
 
-    .g6 {
-        left: 18%;
-        width: 145px;
-    }
+.goat-card-login {
+    max-width: 400px;
+    min-height: 520px;
+}
 
-    .g7 {
-        left: 22%;
-        width: 120px;
-    }
+.goat-card-login form {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+}
 
-    .g8 {
-        left: 26%;
-        width: 135px;
-    }
-
-    .g9 {
-        left: 30%;
-        width: 110px;
-    }
-
-    .g10 {
-        left: 34%;
-        width: 140px;
-    }
-
-    .g11 {
-        left: 38%;
-        width: 115px;
-    }
-
-    .g12 {
-        left: 42%;
-        width: 135px;
-    }
-
-    .g13 {
-        left: 46%;
-        width: 110px;
-    }
-
-    .g14 {
-        left: 50%;
-        width: 145px;
-    }
-
-    .g15 {
-        left: 54%;
-        width: 115px;
-    }
-
-    .g16 {
-        left: 58%;
-        width: 135px;
-    }
-
-    .g17 {
-        left: 62%;
-        width: 110px;
-    }
-
-    .g18 {
-        left: 66%;
-        width: 140px;
-    }
-
-    .g19 {
-        left: 70%;
-        width: 115px;
-    }
-
-    .g20 {
-        left: 74%;
-        width: 145px;
-    }
-
-    .g21 {
-        left: 78%;
-        width: 110px;
-    }
-
-    .g22 {
-        left: 82%;
-        width: 135px;
-    }
-
-    .g23 {
-        left: 86%;
-        width: 110px;
-    }
-
-    .g24 {
-        left: 89%;
-        width: 140px;
-    }
-
-    .g25 {
-        left: 92%;
-        width: 115px;
-    }
-
-    .g26 {
-        left: 95%;
-        width: 145px;
-    }
-
-    .g27,
-    .g28,
-    .g29,
-    .g30 {
-        display: none;
-    }
+.goat-card-login form > div:last-child {
+    margin-top: auto;
 }

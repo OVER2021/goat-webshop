@@ -8,7 +8,17 @@
 </head>
 <body>
 
-<header class="hero">
+@auth
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit">Uitloggen ({{ Auth::user()->name }})</button>
+    </form>
+@else
+    <a href="{{ route('login') }}">Inloggen</a>
+    <a href="{{ route('register') }}">Registreren</a>
+@endauth
+
+<!-- <header class="hero">
 
     <img
     src="{{ asset('img/test/logowebshop.png') }}"
@@ -64,7 +74,7 @@
     <img src="{{ asset('img/test/graan/graan.png') }}" class="grain g29" alt="">
     <img src="{{ asset('img/test/graan/graanFlipped.png') }}" class="grain g30" alt="">
 
-</header>
+</header> -->
 
 <main class="products">
 
