@@ -28,7 +28,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('products.index', absolute: false));
+        return redirect()->intended(route('products.index', absolute: false))
+            ->with('status', 'Je bent succesvol ingelogd');
     }
 
     /**
